@@ -220,3 +220,7 @@
     margin-top: 0;
   }
 }
+.icon-button {
+  border-style: none;
+  background-color: transparent;
+}

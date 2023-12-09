@@ -23,7 +23,6 @@ specifiers:
   react-router-dom: 5.3.0
   react-scripts: 4.0.3
   react-slick: 0.28.1
-  styled-components: 6.1.1
 
 dependencies:
   '@testing-library/jest-dom': 5.11.9
@@ -40,7 +39,6 @@ dependencies:
   react-loader-spinner: 4.0.0_react-dom@17.0.1+react@17.0.1
   react-router-dom: 5.3.0_react@17.0.1
   react-slick: 0.28.1_react-dom@17.0.1+react@17.0.1
-  styled-components: 6.1.1_react-dom@17.0.1+react@17.0.1
 
 devDependencies:
   eslint-config-airbnb: 18.2.1
@@ -2548,20 +2546,6 @@ packages:
     resolution: {integrity: sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg==}
     dev: true
 
-  /@emotion/is-prop-valid/1.2.1:
-    resolution: {integrity: sha512-61Mf7Ufx4aDxx1xlDeOm8aFFigGHE4z+0sKCa+IHCeZKiyP9RLD0Mmx7m8b9/Cf37f7NAvQOOJAbQQGVr5uERw==}
-    dependencies:
-      '@emotion/memoize': 0.8.1
-    dev: false
-
-  /@emotion/memoize/0.8.1:
-    resolution: {integrity: sha512-W2P2c/VRW1/1tLox0mVUalvnWXxavmv/Oum2aPsRcoDJuob75FC3Y8FbpfLwUegRcxINtGUMPq0tFCvYNTBXNA==}
-    dev: false
-
-  /@emotion/unitless/0.8.1:
-    resolution: {integrity: sha512-KOEGMu6dmJZtpadb476IsZBclKvILjopjUii3V+7MnXIQCYh8W3NgNcgwo21n9LXZX6EDIKvqfjYxXebDwxKmQ==}
-    dev: false
-
   /@eslint/eslintrc/0.4.3:
     resolution: {integrity: sha512-J6KFFz5QCYUJq3pf0mjEcCJVERbzv71PUIDczuh9JkwGEzced6CO5ADLHB1rbf/+oPBtoPfMYNOpGDzCANlbXw==}
     engines: {node: ^10.12.0 || >=12.0.0}
@@ -3367,10 +3351,6 @@ packages:
 
   /@types/stack-utils/2.0.3:
     resolution: {integrity: sha512-9aEbYZ3TbYMznPdcdr3SmIrLXwC/AKZXQeCf9Pgao5CKb8CyHuEX5jzWPTkvregvhRJHcpRO6BFoGW9ycaOkYw==}
-
-  /@types/stylis/4.2.4:
-    resolution: {integrity: sha512-36ZrGJ8fgtBr6nwNnuJ9jXIj+bn/pF6UoqmrQT7+Y99+tFFeHHsoR54+194dHdyhPjgbeoNz3Qru0oRt0l6ASQ==}
-    dev: false
 
   /@types/tapable/1.0.12:
     resolution: {integrity: sha512-bTHG8fcxEqv1M9+TD14P8ok8hjxoOCkfKc8XXLaaD05kI7ohpeI956jtDOD3XHKBQrlyPughUtzm1jtVhHpA5Q==}
@@ -4888,10 +4868,6 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /camelize/1.0.1:
-    resolution: {integrity: sha512-dU+Tx2fsypxTgtLoE36npi3UqcjSSMNYfkqgmoEhtZrraP5VWq0K7FkWVTYa8eMPtnU/G2txVsfdCJTn9uzpuQ==}
-    dev: false
-
   /caniuse-api/3.0.0:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
     dependencies:
@@ -5470,11 +5446,6 @@ packages:
       postcss: 7.0.39
     dev: true
 
-  /css-color-keywords/1.0.0:
-    resolution: {integrity: sha512-FyyrDHZKEjXDpNJYvVsV960FiqQyXc/LlYmsxl2BcdMb2WPx0OGRVgTg55rPSyLSNMqP52R9r8geSp7apN3Ofg==}
-    engines: {node: '>=4'}
-    dev: false
-
   /css-color-names/0.0.4:
     resolution: {integrity: sha512-zj5D7X1U2h2zsXOAM8EyUREBnnts6H+Jm+d1M2DbiQQcUtnqgQsMrdo8JW9R80YFUmIdBZeMu5wvYM7hcgWP/Q==}
     dev: true
@@ -5556,14 +5527,6 @@ packages:
       domhandler: 5.0.3
       domutils: 3.1.0
       nth-check: 2.1.1
-    dev: false
-
-  /css-to-react-native/3.2.0:
-    resolution: {integrity: sha512-e8RKaLXMOFii+02mOlqwjbD00KSEKqblnpO9e++1aXS1fPQOpS1YoqdVHBqPjHNoxeF2mimzVqawm2KCbEdtHQ==}
-    dependencies:
-      camelize: 1.0.1
-      css-color-keywords: 1.0.0
-      postcss-value-parser: 4.2.0
     dev: false
 
   /css-tree/1.0.0-alpha.37:
@@ -5717,10 +5680,6 @@ packages:
     dependencies:
       cssom: 0.3.8
     dev: true
-
-  /csstype/3.1.3:
-    resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
-    dev: false
 
   /cyclist/1.0.2:
     resolution: {integrity: sha512-0sVXIohTfLqVIW3kb/0n6IiWF3Ifj5nm2XaSrLq2DI6fKIGa2fYAZdk917rUneaeLVpYfFcyXE2ft0fe3remsA==}
@@ -9898,6 +9857,7 @@ packages:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
+    dev: true
 
   /nanomatch/1.2.13:
     resolution: {integrity: sha512-fpoe2T0RbHwBTBUOftAfBPaDEi06ufaUai0mE6Yn1kacc3SnTErfb/h+X94VXzI64rKFHYImXSvdwGGCmwOqCA==}
@@ -10574,6 +10534,7 @@ packages:
 
   /picocolors/1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
+    dev: true
 
   /picomatch/2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
@@ -11294,6 +11255,7 @@ packages:
 
   /postcss-value-parser/4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
+    dev: true
 
   /postcss-values-parser/2.0.1:
     resolution: {integrity: sha512-2tLuBsA6P4rYTNKCXYG/71C7j1pU6pK503suYOmn4xYrQIzW+opD+7FAFNuGSdZC/3Qfy334QbeMu7MEb8gOxg==}
@@ -11328,6 +11290,7 @@ packages:
       nanoid: 3.3.7
       picocolors: 1.0.0
       source-map-js: 1.0.2
+    dev: true
 
   /prelude-ls/1.1.2:
     resolution: {integrity: sha512-ESF23V4SKG6lVSGZgYNpbsiaAkdab6ZgOxe52p7+Kid3W3u3bxR4Vfd/o21dmN7jSt0IwgZ4v5MUd26FEtXE9w==}
@@ -12547,10 +12510,6 @@ packages:
       safe-buffer: 5.2.1
     dev: true
 
-  /shallowequal/1.1.0:
-    resolution: {integrity: sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==}
-    dev: false
-
   /shebang-command/1.2.0:
     resolution: {integrity: sha512-EV3L1+UQWGor21OmnvojK36mhg+TyIKDh3iFBKBohr5xeXIhNBcx8oWdgkTEEQ+BEFFYdLRuqMfd5L84N1V5Vg==}
     engines: {node: '>=0.10.0'}
@@ -12693,6 +12652,7 @@ packages:
   /source-map-js/1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
+    dev: true
 
   /source-map-resolve/0.5.3:
     resolution: {integrity: sha512-Htz+RnsXWk5+P2slx5Jh3Q66vhQj1Cllm0zvnaY98+NFx+Dv2CF/f5O/t8x+KaNdrdIAsruNzoh/KpialbqAnw==}
@@ -13074,26 +13034,6 @@ packages:
       webpack: 4.44.2
     dev: true
 
-  /styled-components/6.1.1_react-dom@17.0.1+react@17.0.1:
-    resolution: {integrity: sha512-cpZZP5RrKRIClBW5Eby4JM1wElLVP4NQrJbJ0h10TidTyJf4SIIwa3zLXOoPb4gJi8MsJ8mjq5mu2IrEhZIAcQ==}
-    engines: {node: '>= 16'}
-    peerDependencies:
-      react: '>= 16.8.0'
-      react-dom: '>= 16.8.0'
-    dependencies:
-      '@emotion/is-prop-valid': 1.2.1
-      '@emotion/unitless': 0.8.1
-      '@types/stylis': 4.2.4
-      css-to-react-native: 3.2.0
-      csstype: 3.1.3
-      postcss: 8.4.31
-      react: 17.0.1
-      react-dom: 17.0.1_react@17.0.1
-      shallowequal: 1.1.0
-      stylis: 4.3.0
-      tslib: 2.6.2
-    dev: false
-
   /stylehacks/4.0.3:
     resolution: {integrity: sha512-7GlLk9JwlElY4Y6a/rmbH2MhVlTyVmiJd1PfTCqFaIBEGMYNsrO/v3SeGTdhBThLg4Z+NbOk/qFMwCa+J+3p/g==}
     engines: {node: '>=6.9.0'}
@@ -13102,10 +13042,6 @@ packages:
       postcss: 7.0.39
       postcss-selector-parser: 3.1.2
     dev: true
-
-  /stylis/4.3.0:
-    resolution: {integrity: sha512-E87pIogpwUsUwXw7dNyU4QDjdgVMy52m+XEOPEKUn161cCzWjjhPSQhByfd1CcNvrOLnXQ6OnnZDwnJrz/Z4YQ==}
-    dev: false
 
   /supports-color/5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}

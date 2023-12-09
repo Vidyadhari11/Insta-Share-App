@@ -5,7 +5,7 @@ import {IoCloseCircle} from 'react-icons/io5'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import {FaSearch} from 'react-icons/fa'
 import CartContext from '../../context/CartContext'
-import {SearchButton, HamburgerButton, LogoutButton} from './styledComponents'
+
 import './index.css'
 
 const Header = props => {
@@ -100,13 +100,14 @@ const Header = props => {
                     className="search-bar"
                     placeholder="Search Caption"
                   />
-                  <SearchButton
+                  <button
+                    className="search-button"
                     onClick={getUserSearchPosts}
                     type="button"
-                    data-testid="searchIcon"
+                    testid="searchIcon"
                   >
                     <FaSearch className="search-icon" />
-                  </SearchButton>
+                  </button>
                 </div>
                 <ul className="nav-bar">
                   <Link to="/" className="nav-item">
@@ -116,9 +117,13 @@ const Header = props => {
                     <li>Profile</li>
                   </Link>
                 </ul>
-                <LogoutButton onClick={onClickLogout} type="button">
+                <button
+                  className="logout-button"
+                  onClick={onClickLogout}
+                  type="button"
+                >
                   Logout
-                </LogoutButton>
+                </button>
               </div>
             </div>
             <div className="mobile-container">
@@ -133,13 +138,14 @@ const Header = props => {
                   </Link>
                   <h1 className="title-heading">Insta Share</h1>
                 </div>
-                <HamburgerButton
+                <button
+                  className="hamburger-button"
                   onClick={() => setHamburgerButton(!isOpen)}
-                  data-testid="hamburgerIcon"
+                  testid="hamburgerIcon"
                   type="button"
                 >
                   <GiHamburgerMenu className="hamburger-icon" />
-                </HamburgerButton>
+                </button>
               </div>
               {isOpen && (
                 <div className="links-div">
@@ -152,12 +158,14 @@ const Header = props => {
                     </Link>
                     <li onClick={showSearchBar}>Search</li>
                   </ul>
-                  <HamburgerButton
+                  <button
                     onClick={() => setHamburgerButton(!isOpen)}
                     type="button"
+                    className="hamburger-button"
+                    testId="hamburgerIcon"
                   >
                     <IoCloseCircle className="hamburger-icon" />
-                  </HamburgerButton>
+                  </button>
                 </div>
               )}
               {searchBarVisible && (
@@ -169,13 +177,14 @@ const Header = props => {
                     type="search"
                     placeholder="Search Caption"
                   />
-                  <SearchButton
+                  <button
                     onClick={getUserSearchPosts}
                     type="button"
-                    data-testid="searchIcon"
+                    testid="searchIcon"
+                    className="search-button"
                   >
                     <FaSearch className="search-icon" />
-                  </SearchButton>
+                  </button>
                 </div>
               )}
             </div>

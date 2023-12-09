@@ -3,7 +3,6 @@ import {BsHeart} from 'react-icons/bs'
 import {BiShareAlt} from 'react-icons/bi'
 import {FaRegComment} from 'react-icons/fa'
 import {FcLike} from 'react-icons/fc'
-import {IconButton} from './styledComponents'
 import './index.css'
 
 const UserPostItem = props => {
@@ -50,28 +49,30 @@ const UserPostItem = props => {
       <img src={postImage} alt="post" className="post-image" />
       <div className="social-div">
         {isLiked ? (
-          <IconButton
+          <button
             type="button"
             onClick={postUnlikeApp}
-            data-testid="unLikeIcon"
+            testid="unLikeIcon"
+            className="icon-button"
           >
             <FcLike className="like-icon" />
-          </IconButton>
+          </button>
         ) : (
-          <IconButton
+          <button
             onClick={postLikeApp}
-            data-testid="likeIcon"
+            testid="likeIcon"
             type="button"
+            className="icon-button"
           >
             <BsHeart className="icon" />
-          </IconButton>
+          </button>
         )}
-        <IconButton data-testid="commentIcon" type="button">
+        <button testid="commentIcon" type="button" className="icon-button">
           <FaRegComment className="icon" />
-        </IconButton>
-        <IconButton data-testid="shareIcon" type="button">
+        </button>
+        <button testid="shareIcon" type="button" className="icon-button">
           <BiShareAlt className="icon" />
-        </IconButton>
+        </button>
       </div>
       <p className="likes">{likesCount} likes</p>
       <p className="caption">{postCaption}</p>

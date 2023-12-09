@@ -67,7 +67,7 @@ class UserPosts extends Component {
   }
 
   renderLoadingView = () => (
-    <div className="user-story-loader-container" data-testid="loader">
+    <div className="user-story-loader-container" testid="loader">
       <Loader type="TailSpin" color="#4094EF" height={50} width={50} />
     </div>
   )
@@ -81,8 +81,8 @@ class UserPosts extends Component {
       />
       <p className="failure-heading">Something went wrong. Please try again</p>
       <button
-        onClick={this.getUserPosts}
-        type="submit"
+        onClick={() => this.getUserPosts()}
+        type="button"
         className="failure-button"
       >
         Try again
