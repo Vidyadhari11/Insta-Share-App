@@ -15,8 +15,9 @@ class Home extends Component {
       <CartContext.Consumer>
         {value => {
           const {searchPosts} = value
+
           return (
-            <div className="home_container">
+            <div className="home-container">
               <Header />
               <UserStories />
               <UserPosts searchPosts={searchPosts} />

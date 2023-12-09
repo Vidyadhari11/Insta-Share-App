@@ -63,7 +63,7 @@ class UserStories extends Component {
       </h1>
       <button
         type="button"
-        onClick={() => this.getUsersStories()}
+        onClick={this.getUsersStories}
         className="failure-button"
       >
         Try Again
@@ -80,32 +80,6 @@ class UserStories extends Component {
       slidesToShow: 6,
       slidesToScroll: 3,
       initialSlide: 0,
-      responsive: [
-        {
-          breakpoint: 900,
-          settings: {
-            slidesToShow: 5,
-            slidesToScroll: 3,
-            infinite: true,
-            dots: true,
-          },
-        },
-        {
-          breakpoint: 500,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            initialSlide: 2,
-          },
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-          },
-        },
-      ],
     }
     return (
       <ul className="slider-container">

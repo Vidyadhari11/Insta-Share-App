@@ -74,7 +74,7 @@ class UserProfile extends Component {
       />
       <p className="failure-heading">Something went wrong. Please try again</p>
       <button
-        onClick={() => this.getUserProfileData()}
+        onClick={this.getUserProfileData}
         type="submit"
         className="failure-button"
       >

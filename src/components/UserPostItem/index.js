@@ -54,7 +54,6 @@ const UserPostItem = props => {
             type="button"
             onClick={postUnlikeApp}
             data-testid="unLikeIcon"
-            className="icon-button"
           >
             <FcLike className="like-icon" />
           </IconButton>

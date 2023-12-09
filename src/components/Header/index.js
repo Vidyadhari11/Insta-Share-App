@@ -10,6 +10,7 @@ import './index.css'
 
 const Header = props => {
   const [isOpen, setHamburgerButton] = useState(false)
+
   const [searchBarVisible, setShowSearchBar] = useState(false)
 
   return (
@@ -33,30 +34,6 @@ const Header = props => {
         const changeSearchText = async event => {
           updateSearchText(event.target.value)
           resetSearchButton()
-          const jwtToken = Cookies.get('jwt_token')
-          const apiUrl = `https://apis.ccbp.in/insta-share/posts?search=${event.target.value}`
-          const options = {
-            headers: {
-              Authorization: `Bearer ${jwtToken}`,
-            },
-            method: 'GET',
-          }
-          const response = await fetch(apiUrl, options)
-          const data = await response.json()
-          if (response.ok) {
-            const updatedData = data.posts.map(eachPost => ({
-              postId: eachPost.post_id,
-              createdAt: eachPost.created_at,
-              likesCount: eachPost.likes_count,
-              comments: eachPost.comments,
-              userId: eachPost.user_id,
-              profilePic: eachPost.profile_pic,
-              userName: eachPost.user_name,
-              postCaption: eachPost.post_details.caption,
-              postImage: eachPost.post_details.image_url,
-            }))
-            setPostsData(updatedData)
-          }
         }
 
         const onClickLogout = () => {
@@ -91,6 +68,7 @@ const Header = props => {
             }))
             updateLoading()
             setPostsData(updatedData)
+            updateSearchText('')
             setSearchButton()
             resetFailure()
           } else {
@@ -158,7 +136,6 @@ const Header = props => {
                 <HamburgerButton
                   onClick={() => setHamburgerButton(!isOpen)}
                   data-testid="hamburgerIcon"
-                  className="hamburger-button"
                   type="button"
                 >
                   <GiHamburgerMenu className="hamburger-icon" />
