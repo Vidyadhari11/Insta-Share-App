@@ -68,7 +68,7 @@ const Header = props => {
             }))
             updateLoading()
             setPostsData(updatedData)
-            updateSearchText('')
+            updateSearchText()
             setSearchButton()
             resetFailure()
           } else {
@@ -104,6 +104,7 @@ const Header = props => {
                     className="search-button"
                     onClick={getUserSearchPosts}
                     type="button"
+                    aria-label="close"
                     testid="searchIcon"
                   >
                     <FaSearch className="search-icon" />
@@ -141,8 +142,9 @@ const Header = props => {
                 <button
                   className="hamburger-button"
                   onClick={() => setHamburgerButton(!isOpen)}
-                  testid="hamburgerIcon"
                   type="button"
+                  aria-label="close"
+                  testid="hamburgerIcon"
                 >
                   <GiHamburgerMenu className="hamburger-icon" />
                 </button>
@@ -162,7 +164,7 @@ const Header = props => {
                     onClick={() => setHamburgerButton(!isOpen)}
                     type="button"
                     className="hamburger-button"
-                    testId="hamburgerIcon"
+                    aria-label="close"
                   >
                     <IoCloseCircle className="hamburger-icon" />
                   </button>
@@ -180,8 +182,9 @@ const Header = props => {
                   <button
                     onClick={getUserSearchPosts}
                     type="button"
-                    testid="searchIcon"
+                    aria-label="close"
                     className="search-button"
+                    testid="searchIcon"
                   >
                     <FaSearch className="search-icon" />
                   </button>

@@ -45,8 +45,9 @@ const UserPostSearchItem = props => (
           <div className="social-div">
             {isLiked ? (
               <button
-                onClick={postUnLikeApi}
                 testid="unLikeIcon"
+                onClick={postUnLikeApi}
+                aria-label="close"
                 type="button"
                 className="icon-button"
               >
@@ -54,8 +55,9 @@ const UserPostSearchItem = props => (
               </button>
             ) : (
               <button
-                onClick={postLikeApi}
                 testid="likeIcon"
+                onClick={postLikeApi}
+                aria-label="close"
                 type="button"
                 className="icon-button"
               >
@@ -63,15 +65,17 @@ const UserPostSearchItem = props => (
               </button>
             )}
             <button
-              data-testid="commentIcon"
+              aria-label="close"
               type="button"
+              testid="commentIcon"
               className="icon-button"
             >
               <FaRegComment className="icon" />
             </button>
             <button
-              data-testid="shareIcon"
+              aria-label="close"
               type="button"
+              testid="shareIcon"
               className="icon-button"
             >
               <BiShareAlt className="icon" />

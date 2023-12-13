@@ -81,7 +81,7 @@ class UserPosts extends Component {
       />
       <p className="failure-heading">Something went wrong. Please try again</p>
       <button
-        onClick={() => this.getUserPosts()}
+        onClick={this.getUserPosts}
         type="button"
         className="failure-button"
       >
