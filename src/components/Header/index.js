@@ -9,6 +9,7 @@ import CartContext from '../../context/CartContext'
 import './index.css'
 
 const Header = props => {
+  const {getUserSearchPosts, changeSearchText} = props
   const [isOpen, setHamburgerButton] = useState(false)
 
   const [searchBarVisible, setShowSearchBar] = useState(false)
@@ -16,24 +17,14 @@ const Header = props => {
   return (
     <CartContext.Consumer>
       {value => {
-        const {
-          searchText,
-          resetSearchButton,
-          setSearchButton,
-          updateLoading,
-          updateSearchText,
-          setPostsData,
-          setFailure,
-          resetFailure,
-        } = value
+        const {searchText, resetSearchButton, updateSearchText} = value
 
         const showSearchBar = () => {
           setShowSearchBar(!searchBarVisible)
         }
 
-        const changeSearchText = async event => {
-          updateSearchText(event.target.value)
-          resetSearchButton()
+        const changeSearchTextButton = event => {
+          changeSearchText(event)
         }
 
         const onClickLogout = () => {
@@ -42,40 +33,8 @@ const Header = props => {
           history.replace('/login')
         }
 
-        const getUserSearchPosts = async () => {
-          updateLoading()
-          const jwtToken = Cookies.get('jwt_token')
-          const apiUrl = `https://apis.ccbp.in/insta-share/posts?search=${searchText}`
-          const options = {
-            headers: {
-              Authorization: `Bearer ${jwtToken}`,
-            },
-            method: 'GET',
-          }
-          const response = await fetch(apiUrl, options)
-          const data = await response.json()
-          if (response.ok) {
-            const updatedData = data.posts.map(eachPost => ({
-              postId: eachPost.post_id,
-              createdAt: eachPost.created_at,
-              likesCount: eachPost.likes_count,
-              comments: eachPost.comments,
-              userId: eachPost.user_id,
-              profilePic: eachPost.profile_pic,
-              userName: eachPost.user_name,
-              postCaption: eachPost.post_details.caption,
-              postImage: eachPost.post_details.image_url,
-            }))
-            updateLoading()
-            setPostsData(updatedData)
-            updateSearchText()
-            setSearchButton()
-            resetFailure()
-          } else {
-            updateLoading()
-            setFailure()
-            setSearchButton()
-          }
+        const userSearchPosts = () => {
+          getUserSearchPosts()
         }
 
         return (
@@ -96,13 +55,13 @@ const Header = props => {
                   <input
                     type="search"
                     value={searchText}
-                    onChange={changeSearchText}
+                    onChange={changeSearchTextButton}
                     className="search-bar"
                     placeholder="Search Caption"
                   />
                   <button
                     className="search-button"
-                    onClick={getUserSearchPosts}
+                    onClick={userSearchPosts}
                     type="button"
                     aria-label="close"
                     testid="searchIcon"
