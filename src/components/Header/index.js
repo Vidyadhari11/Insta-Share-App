@@ -130,7 +130,7 @@ const Header = props => {
                     onClick={getUserSearchPosts}
                     type="button"
                     aria-label="close"
-                    data-testid="searchIcon"
+                    testid="searchIcon"
                   >
                     <FaSearch className="search-icon" />
                   </button>
@@ -169,7 +169,7 @@ const Header = props => {
                   onClick={() => setHamburgerButton(!isOpen)}
                   type="button"
                   aria-label="close"
-                  data-testid="hamburgerIcon"
+                  testid="hamburgerIcon"
                 >
                   <GiHamburgerMenu className="hamburger-icon" />
                 </button>
@@ -190,7 +190,7 @@ const Header = props => {
                     type="button"
                     className="hamburger-button"
                     aria-label="close"
-                    data-testid="hamburgerIcon"
+                    testid="hamburgerIcon"
                   >
                     <IoCloseCircle className="hamburger-icon" />
                   </button>
@@ -210,7 +210,7 @@ const Header = props => {
                     type="button"
                     aria-label="close"
                     className="search-button"
-                    data-testid="searchIcon"
+                    testid="searchIcon"
                   >
                     <FaSearch className="search-icon" />
                   </button>

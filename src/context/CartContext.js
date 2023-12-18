@@ -9,7 +9,7 @@ const CartContext = React.createContext({
   setFailure: () => {},
   setSearchButton: () => {},
   updateLoading: () => {},
-  upDateSearchText: () => {},
+  updateSearchText: () => {},
   resetSearchButton: () => {},
   postsData: [],
   setPostsData: () => {},

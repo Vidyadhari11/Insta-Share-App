@@ -16,8 +16,8 @@ const UserPostSearchItem = props => (
       const {comments, postId, likesCount, message} = eachPost
       const updatedComments = comments.map(eachComment => ({
         comment: eachComment.comment,
-        commentUserId: eachComment.user_id,
-        commentUserName: eachComment.user_name,
+        userId: eachComment.user_id,
+        userName: eachComment.user_name,
       }))
       const isLiked = message === 'Post has been liked'
 
@@ -49,7 +49,7 @@ const UserPostSearchItem = props => (
                 aria-label="close"
                 type="button"
                 className="icon-button"
-                data-testid="unLikeIcon"
+                testid="unLikeIcon"
               >
                 <FcLike className="like-icon" />
               </button>
@@ -59,7 +59,7 @@ const UserPostSearchItem = props => (
                 aria-label="close"
                 type="button"
                 className="icon-button"
-                data-testid="likeIcon"
+                testid="likeIcon"
               >
                 <BsHeart className="icon" />
               </button>
@@ -68,7 +68,7 @@ const UserPostSearchItem = props => (
               aria-label="close"
               type="button"
               className="icon-button"
-              data-testid="commentIcon"
+              testid="commentIcon"
             >
               <FaRegComment className="icon" />
             </button>
@@ -76,7 +76,7 @@ const UserPostSearchItem = props => (
               aria-label="close"
               type="button"
               className="icon-button"
-              data-testid="shareIcon"
+              testid="shareIcon"
             >
               <BiShareAlt className="icon" />
             </button>
@@ -86,9 +86,9 @@ const UserPostSearchItem = props => (
           <ul className="comments-container">
             {updatedComments.map(eachComment => (
               <li className="comment-item" key={eachComment.commentUserId}>
-                <Link to={`/users/${eachComment.commentUserId}`}>
+                <Link to={`/users/${eachComment.userId}`}>
                   <span className="comment-user-name">
-                    {eachComment.commentUserName}
+                    {eachComment.userName}
                   </span>
                 </Link>
                 <p className="comment">{eachComment.comment}</p>

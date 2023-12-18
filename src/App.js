@@ -49,6 +49,7 @@ class App extends Component {
 
   initiateSearchPostLikeApi = async (postId, likeStatus) => {
     const {searchPosts} = this.state
+
     const jwtToken = Cookies.get('jwt_token')
     const likeDetails = {
       like_status: likeStatus,
@@ -110,6 +111,7 @@ class App extends Component {
           setSearchButton: this.setSearchButton,
           updateLoading: this.updateLoading,
           setPostsData: this.setPostsData,
+          initiateSearchPostLikeApi: this.initiateSearchPostLikeApi,
         }}
       >
         <Switch>
