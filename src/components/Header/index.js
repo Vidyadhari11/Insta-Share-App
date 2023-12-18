@@ -9,7 +9,6 @@ import CartContext from '../../context/CartContext'
 import './index.css'
 
 const Header = props => {
-  const {getUserSearchPosts, changeSearchText} = props
   const [isOpen, setHamburgerButton] = useState(false)
 
   const [searchBarVisible, setShowSearchBar] = useState(false)
@@ -17,14 +16,49 @@ const Header = props => {
   return (
     <CartContext.Consumer>
       {value => {
-        const {searchText, resetSearchButton, updateSearchText} = value
+        const {
+          searchText,
+          updateSearchText,
+          resetSearchButton,
+          setSearchButton,
+          updateLoading,
+
+          setPostsData,
+          setFailure,
+          resetFailure,
+        } = value
 
         const showSearchBar = () => {
           setShowSearchBar(!searchBarVisible)
         }
 
-        const changeSearchTextButton = event => {
-          changeSearchText(event)
+        const changeSearchText = async event => {
+          updateSearchText(event.target.value)
+          resetSearchButton()
+          const jwtToken = Cookies.get('jwt_token')
+          const apiUrl = `https://apis.ccbp.in/insta-share/posts?search=${event.target.value}`
+          const options = {
+            headers: {
+              Authorization: `Bearer ${jwtToken}`,
+            },
+            method: 'GET',
+          }
+          const response = await fetch(apiUrl, options)
+          const data = await response.json()
+          if (response.ok === true) {
+            const updatedData = data.posts.map(eachPost => ({
+              postId: eachPost.post_id,
+              createdAt: eachPost.created_at,
+              likesCount: eachPost.likes_count,
+              comments: eachPost.comments,
+              userId: eachPost.user_id,
+              profilePic: eachPost.profile_pic,
+              userName: eachPost.user_name,
+              postCaption: eachPost.post_details.caption,
+              postImage: eachPost.post_details.image_url,
+            }))
+            setPostsData(updatedData)
+          }
         }
 
         const onClickLogout = () => {
@@ -33,8 +67,40 @@ const Header = props => {
           history.replace('/login')
         }
 
-        const userSearchPosts = () => {
-          getUserSearchPosts()
+        const getUserSearchPosts = async () => {
+          updateLoading()
+          const jwtToken = Cookies.get('jwt_token')
+          const apiUrl = `https://apis.ccbp.in/insta-share/posts?search=${searchText}`
+          const options = {
+            headers: {
+              Authorization: `Bearer ${jwtToken}`,
+            },
+            method: 'GET',
+          }
+          const response = await fetch(apiUrl, options)
+          const data = await response.json()
+          console.log(data)
+          if (response.ok === true) {
+            const updatedData = data.posts.map(eachPost => ({
+              postId: eachPost.post_id,
+              createdAt: eachPost.created_at,
+              likesCount: eachPost.likes_count,
+              comments: eachPost.comments,
+              userId: eachPost.user_id,
+              profilePic: eachPost.profile_pic,
+              userName: eachPost.user_name,
+              postCaption: eachPost.post_details.caption,
+              postImage: eachPost.post_details.image_url,
+            }))
+            updateLoading()
+            setPostsData(updatedData)
+            setSearchButton()
+            resetFailure()
+          } else {
+            updateLoading()
+            setFailure()
+            setSearchButton()
+          }
         }
 
         return (
@@ -55,16 +121,15 @@ const Header = props => {
                   <input
                     type="search"
                     value={searchText}
-                    onChange={changeSearchTextButton}
+                    onChange={changeSearchText}
                     className="search-bar"
                     placeholder="Search Caption"
                   />
                   <button
                     className="search-button"
-                    onClick={userSearchPosts}
+                    onClick={getUserSearchPosts}
                     type="button"
                     aria-label="close"
-                    testid="searchIcon"
                   >
                     <FaSearch className="search-icon" />
                   </button>
@@ -103,7 +168,6 @@ const Header = props => {
                   onClick={() => setHamburgerButton(!isOpen)}
                   type="button"
                   aria-label="close"
-                  testid="hamburgerIcon"
                 >
                   <GiHamburgerMenu className="hamburger-icon" />
                 </button>
@@ -143,7 +207,6 @@ const Header = props => {
                     type="button"
                     aria-label="close"
                     className="search-button"
-                    testid="searchIcon"
                   >
                     <FaSearch className="search-icon" />
                   </button>

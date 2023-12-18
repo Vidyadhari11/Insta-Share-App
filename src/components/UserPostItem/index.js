@@ -53,7 +53,6 @@ const UserPostItem = props => {
             type="button"
             onClick={postUnlikeApp}
             aria-label="close"
-            testid="unLikeIcon"
             className="icon-button"
           >
             <FcLike className="like-icon" />
@@ -63,26 +62,15 @@ const UserPostItem = props => {
             onClick={postLikeApp}
             aria-label="close"
             type="button"
-            testid="likeIcon"
             className="icon-button"
           >
             <BsHeart className="icon" />
           </button>
         )}
-        <button
-          aria-label="close"
-          testid="commentIcon"
-          type="button"
-          className="icon-button"
-        >
+        <button aria-label="close" type="button" className="icon-button">
           <FaRegComment className="icon" />
         </button>
-        <button
-          aria-label="close"
-          type="button"
-          testid="shareIcon"
-          className="icon-button"
-        >
+        <button aria-label="close" type="button" className="icon-button">
           <BiShareAlt className="icon" />
         </button>
       </div>

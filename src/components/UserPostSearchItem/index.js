@@ -45,7 +45,6 @@ const UserPostSearchItem = props => (
           <div className="social-div">
             {isLiked ? (
               <button
-                testid="unLikeIcon"
                 onClick={postUnLikeApi}
                 aria-label="close"
                 type="button"
@@ -55,7 +54,6 @@ const UserPostSearchItem = props => (
               </button>
             ) : (
               <button
-                testid="likeIcon"
                 onClick={postLikeApi}
                 aria-label="close"
                 type="button"
@@ -64,20 +62,10 @@ const UserPostSearchItem = props => (
                 <BsHeart className="icon" />
               </button>
             )}
-            <button
-              aria-label="close"
-              type="button"
-              testid="commentIcon"
-              className="icon-button"
-            >
+            <button aria-label="close" type="button" className="icon-button">
               <FaRegComment className="icon" />
             </button>
-            <button
-              aria-label="close"
-              type="button"
-              testid="shareIcon"
-              className="icon-button"
-            >
+            <button aria-label="close" type="button" className="icon-button">
               <BiShareAlt className="icon" />
             </button>
           </div>

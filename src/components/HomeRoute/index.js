@@ -24,13 +24,7 @@ class Home extends Component {
             setSearchButton,
             resetFailure,
             setFailure,
-            resetSearchButton,
           } = value
-
-          const changeSearchText = async event => {
-            updateSearchText(event.target.value)
-            resetSearchButton()
-          }
 
           const getUserSearchPosts = async () => {
             updateLoading()
@@ -70,10 +64,7 @@ class Home extends Component {
 
           return (
             <div className="home-container">
-              <Header
-                getUserSearchPosts={getUserSearchPosts}
-                changeSearchText={changeSearchText}
-              />
+              <Header getUserSearchPosts={getUserSearchPosts} />
               <UserStories />
               <UserPosts searchPosts={searchPosts} />
             </div>
