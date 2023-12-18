@@ -46,7 +46,7 @@ class UserStories extends Component {
   }
 
   renderLoadingView = () => (
-    <div className="user-story-loader-container">
+    <div className="user-story-loader-container" data-testid="loader">
       <Loader type="TailSpin" color="#4094EF" height={50} width={50} />
     </div>
   )

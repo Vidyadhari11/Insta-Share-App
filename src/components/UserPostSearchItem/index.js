@@ -49,6 +49,7 @@ const UserPostSearchItem = props => (
                 aria-label="close"
                 type="button"
                 className="icon-button"
+                data-testid="unLikeIcon"
               >
                 <FcLike className="like-icon" />
               </button>
@@ -58,14 +59,25 @@ const UserPostSearchItem = props => (
                 aria-label="close"
                 type="button"
                 className="icon-button"
+                data-testid="likeIcon"
               >
                 <BsHeart className="icon" />
               </button>
             )}
-            <button aria-label="close" type="button" className="icon-button">
+            <button
+              aria-label="close"
+              type="button"
+              className="icon-button"
+              data-testid="commentIcon"
+            >
               <FaRegComment className="icon" />
             </button>
-            <button aria-label="close" type="button" className="icon-button">
+            <button
+              aria-label="close"
+              type="button"
+              className="icon-button"
+              data-testid="shareIcon"
+            >
               <BiShareAlt className="icon" />
             </button>
           </div>
